@@ -1,0 +1,382 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="pt-br" xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>
+	Portal da Nota Fiscal Eletrônica
+</title>
+
+    <!-- CSS -->
+    <link href="css/geral.css" rel="stylesheet" type="text/css">
+    <link href="css/classes.css" rel="stylesheet" type="text/css">
+    <link href="css/paginasInternas.css" rel="stylesheet" type="text/css">
+    <link href="css/estilo_visualizacao.css" rel="stylesheet" type="text/css">
+
+    <!-- Javascript -->
+    <script src="scripts/jquery-3.2.1.min.js" type="text/javascript"></script>
+    <script src="scripts/menu.js" type="text/javascript"></script>
+
+    <meta http-equiv="cache-control" content="no-store, no-cache, must-revalidate, Post-Check=0, Pre-Check=0">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="expires" content="0">
+
+    <style type="text/css" media="all">
+        #barra-brasil div,#barra-brasil a,#barra-brasil ul,#barra-brasil li{margin:0;padding:0;font-size:100%;font-family:inherit;vertical-align:baseline;border:none}
+        #barra-brasil ul{list-style:none}
+        @font-face{font-family:"Open Sans";font-style:normal;font-weight:700;font-display:swap;src:local("Open Sans Bold"),local("OpenSans-Bold"),url("//barra.brasil.gov.br/static/opensans-bold.woff") format("woff")}
+        #barra-brasil{height:32px;background:#f1f1f1;font-weight:bold;font-size:12px;line-height:32px;font-family:"Open Sans",Arial,Helvetica,sans-serif;border-bottom:1px solid #dfdfdf;box-sizing:content-box}
+        #barra-brasil a{text-decoration:none}
+        div#wrapper-barra-brasil{position:relative;margin:0 auto;width:100%;max-width:960px;height:100%}
+        #barra-brasil .brasil-flag{float:left;padding:7px 0 6px;width:115px;border-right:2px solid #dfdfdf}
+        #barra-brasil .brasil-flag .link-barra{display:block;padding-left:42px;width:43px;background:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2226%22%20height%3D%2219%22%20viewBox%3D%220%200%201000%20700%22%3E%3Cpath%20fill%3D%22%2300923F%22%20d%3D%22M0%200h1000v700H0z%22%2F%3E%3Cpath%20fill%3D%22%23F8C300%22%20d%3D%22M500%2085L85%20350l415%20265%20415-265L500%2085z%22%2F%3E%3Ccircle%20fill%3D%22%2328166F%22%20cx%3D%22499%22%20cy%3D%22350%22%20r%3D%22174%22%2F%3E%3Cpath%20fill%3D%22%23FFF%22%20d%3D%22M395%20296c103%200%20199%2038%20272%20101%202-8%204-17%205-26-75-61-172-98-277-98-18%200-36%201-53%203-3%208-6%2016-9%2025%2020-3%2041-4%2063-4z%22%2F%3E%3C%2Fsvg%3E") 8px center no-repeat;text-transform:uppercase;line-height:19px}
+        #barra-brasil .list{position:absolute;top:0;right:40px;width:auto}
+        #barra-brasil .list .first{border-left:2px solid #dfdfdf}
+        #barra-brasil .list-item{display:inline-block;height:32px;line-height:32px;border-right:2px solid #dfdfdf}
+        #barra-brasil .list-item a{padding:8px 15px 8px 13px}
+        #barra-brasil .link-barra{color:#606060}
+        
+        /* Estilos do formulário de consulta */
+        .consulta-box {
+            border: 1px solid #c7a460;
+            background-color: #fcfaf6;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        .consulta-box label {
+            display: block;
+            font-family: Arial, Verdana, Helvetica, sans-serif;
+            font-size: 12px;
+            color: #b27235;
+            margin-bottom: 5px;
+        }
+        
+        .consulta-box input[type="text"] {
+            width: 100%;
+            max-width: 500px;
+            padding: 8px;
+            border: 1px solid #c7a460;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+        
+        .captcha-box {
+            display: inline-block;
+            border: 1px solid #d3d3d3;
+            background-color: #f9f9f9;
+            padding: 15px 20px;
+            margin: 15px 0;
+            border-radius: 3px;
+        }
+        
+        .captcha-box label {
+            display: inline;
+            font-size: 14px;
+            color: #555;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+        
+        .captcha-box input[type="checkbox"] {
+            width: 24px;
+            height: 24px;
+            cursor: pointer;
+            vertical-align: middle;
+        }
+        
+        .captcha-logo {
+            float: right;
+            margin-left: 30px;
+            text-align: center;
+        }
+        
+        .captcha-logo img {
+            height: 40px;
+        }
+        
+        .captcha-logo span {
+            display: block;
+            font-size: 10px;
+            color: #555;
+        }
+        
+        .btn-consulta {
+            display: inline-block;
+            padding: 8px 20px;
+            margin-right: 10px;
+            border: 1px solid #c7a460;
+            background-color: #f4edd5;
+            color: #6f5e39;
+            font-size: 12px;
+            cursor: pointer;
+            background-image: url('imagens/meio_botao_off.png');
+            background-repeat: repeat-x;
+        }
+        
+        .btn-consulta:hover {
+            background-color: #e8dfc5;
+        }
+        
+        .observacoes {
+            margin-top: 30px;
+            font-family: Arial, Verdana, Helvetica, sans-serif;
+            font-size: 12px;
+            color: #b27235;
+        }
+        
+        .observacoes h3 {
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+        
+        .observacoes ol {
+            margin-left: 20px;
+            color: #555;
+        }
+        
+        .observacoes li {
+            margin-bottom: 8px;
+            line-height: 1.5;
+        }
+        
+        .erro-msg {
+            display: none;
+            color: #c00;
+            background-color: #ffe0e0;
+            border: 1px solid #c00;
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body onselectstart="return true;">
+    <div id="barra-brasil">
+        <div id="wrapper-barra-brasil">
+            <div class="brasil-flag"><a href="https://gov.br/" class="link-barra">Brasil</a></div>
+            <nav>
+                <ul id="lista-barra-brasil" class="list">
+                    <li class="list-item"><a href="http://www.gov.br/economia/pt-br/canais_atendimento/ouvidoria/simplifique" class="link-barra">Simplifique!</a></li>
+                    <li class="list-item"><a href="https://www.gov.br/secom/pt-br/acesso-a-informacao/comunicabr/" class="link-barra">Comunica BR</a></li>
+                    <li class="list-item"><a href="https://www.gov.br/pt-br/participacao-social/" class="link-barra">Participe</a></li>
+                    <li class="list-item"><a href="http://www.gov.br/acessoainformacao/" class="link-barra">Acesso à informação</a></li>
+                    <li class="list-item"><a href="http://www.planalto.gov.br/legislacao" class="link-barra">Legislação</a></li>
+                    <li class="list-item last last-item"><a href="https://gov.br/pt-br/canais-do-executivo-federal" class="link-barra">Canais</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <div id="divCentral">
+        <form method="post" action="#" id="aspnetForm" onsubmit="return validarConsulta();">
+            <div id="tudoSemRodape" class="contemFloat">
+                <div id="cabecalho">
+                    <div id="menuAcessibilidade">
+                        <a href="https://www.nfe.fazenda.gov.br/portal/listaSubMenu.aspx?Id=6H4uVlIEaKs=">Conheça a NF-e</a>
+                        <a href="https://www.nfe.fazenda.gov.br/portal/listaSubMenu.aspx?Id=esCrSQFUvGg=">Serviços</a>
+                        <a href="https://www.nfe.fazenda.gov.br/portal/listaSubMenu.aspx?Id=ndIjl+iEFdE=">Legislação</a>
+                        <a href="https://www.nfe.fazenda.gov.br/portal/listaSubMenu.aspx?Id=04BIflQt1aY=">Documentos</a>
+                        <a href="https://www.nfe.fazenda.gov.br/portal/listaSubMenu.aspx?Id=BMPFMBoln3w=">Downloads</a>
+                        <a href="https://www.nfe.fazenda.gov.br/arearestrita/inicial/autenticacao.aspx">Área Restrita</a>
+                    </div>
+                    
+                    <div id="divTransparente" onclick="javascript:location.href = 'principal.html'"></div>
+                    <div id="imgHome">
+                        <a href="principal.html">
+                            <img id="ibtHome" src="imagens/home_icon_Off.png" alt="Link para a página inicial do Portal da NF-e">
+                        </a>
+                    </div>
+                    <div id="menu">
+                        <ul class="abasMenu">
+                            <li class="itemMenuPrincipal"><a href="https://www.nfe.fazenda.gov.br/portal/listaSubMenu.aspx?Id=esCrSQFUvGg=">Serviços</a></li>
+                            <li class="itemMenuPrincipal"><a href="https://www.nfe.fazenda.gov.br/portal/listaSubMenu.aspx?Id=ndIjl+iEFdE=">Legislação</a></li>
+                            <li class="itemMenuPrincipal"><a href="https://www.nfe.fazenda.gov.br/portal/listaSubMenu.aspx?Id=04BIflQt1aY=">Documentos</a></li>
+                            <li class="itemMenuPrincipal"><a href="https://www.nfe.fazenda.gov.br/portal/listaSubMenu.aspx?Id=BMPFMBoln3w=">Downloads</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div id="barraDireita">
+                    <div id="estatisticas">
+                        <h1>Estatísticas da NF-e</h1>
+                        <span id="ctl00_lblTituloNfeAut">NF-e Autorizadas</span>
+                        <br>
+                        <div class="valorEstatistica">
+                            <span id="ctl00_lblTotalNfeAut">54,007 bilhões</span>
+                        </div>
+                        <span id="ctl00_lblTituloEmissores">Número de Emissores</span>
+                        <br>
+                        <div class="valorEstatistica">
+                            <span id="ctl00_lblTotalEmissores">2,688 milhões</span>
+                        </div>
+                        <a id="ctl00_hlkInfoEstatisticas" href="https://www.nfe.fazenda.gov.br/portal/infoEstatisticas.aspx">... saiba mais</a>
+                    </div>
+                    <div id="busca">
+                        <div id="ctl00_upnBuscar">
+                            <input name="ctl00$txtPalavraChave" type="text" id="ctl00_txtPalavraChave" class="campoTextoBusca" autocomplete="off">
+                            <input type="image" name="ctl00$ibtBuscar" id="ctl00_ibtBuscar" class="botaoBuscar" src="imagens/botao_buscar_Off_completo.png">
+                        </div>
+                    </div>
+                    <div id="linkAreaRestrita">
+                        <p><a id="ctl00_hlkAreaRestrita" href="https://www.nfe.fazenda.gov.br/arearestrita/inicial/autenticacao.aspx">Área Restrita do Fisco</a></p>
+                    </div>
+                    <div id="linkCentralNFe">
+                        <p><a id="ctl00_hlkCentralAtendimento" href="https://www.serpro.gov.br/menu/suporte/central-de-atendimento-serpro-nfe-cte">Central de Atendimento</a></p>
+                    </div>
+                    <div id="linkFAQ">
+                        <p><a id="ctl00_hlkFAQ" href="https://www.nfe.fazenda.gov.br/portal/perguntasFrequentes.aspx?tipoConteudo=3Ow1nfTBzIo=">Perguntas Frequentes</a></p>
+                    </div>
+                    <div id="linkSefaz">
+                        <p><span id="ctl00_lblPortaisSefaz">Portais e Secretarias</span></p>
+                    </div>
+                    <div id="linkBanners">
+                        <p>
+                            <span id="ctl00_lblPortaisEstaduais">Portais Estaduais da NF-e</span><br>
+                            <select onchange="javascript: window.open(this.value)">
+                                <option value="">Selecione</option>
+                                <option value="http://sefaznet.ac.gov.br/nfe/">Acre</option>
+                                <option value="http://www.sefaz.al.gov.br/nfe/">Alagoas</option>
+                                <option value="https://www.sefaz.ap.gov.br/index.php/nf-e">Amapá</option>
+                                <option value="http://www.sefaz.ba.gov.br/scripts/default/nfiscal.asp">Bahia</option>
+                                <option value="http://www.fazenda.sp.gov.br/nfe/">São Paulo</option>
+                            </select>
+                        </p>
+                        <p>
+                            <span id="ctl00_lblLinkSefaz">Secretarias de Fazenda</span><br>
+                            <select onchange="javascript: window.open(this.value)">
+                                <option value="">Selecione</option>
+                                <option value="http://www.sefaz.ba.gov.br/">Bahia</option>
+                                <option value="http://www.fazenda.sp.gov.br/">São Paulo</option>
+                            </select>
+                        </p>
+                        
+                        <img id="linhaDivisoria" src="imagens/linha_divisoria.png" alt="Linha divisória">
+                        <div>
+                            <table cellspacing="0" rules="all" id="ctl00_gdvLinksDestaque" style="border-width:0px;border-collapse:collapse;">
+                                <tbody>
+                                    <tr><td><input type="image" title="Conhecimento de Transporte Eletrônico" src="imagens/banners_Visite_CTe_Off.png" alt="CT-e"></td></tr>
+                                    <tr><td><input type="image" title="Sistema Público de Escrituração Fiscal" src="imagens/banners_Visite_Sped_Off.png" alt="SPED"></td></tr>
+                                    <tr><td><input type="image" title="Superintendência da Zona Franca de Manaus" src="imagens/banners_manaus_Off.png" alt="SUFRAMA"></td></tr>
+                                    <tr><td><input type="image" title="Manifesto Eletrônico de Documentos Fiscais" src="imagens/banner_mdfe_Off.png" alt="MDF-e"></td></tr>
+                                    <tr><td><input type="image" title="Portal Nacional do Bilhete de Passagem Eletrônico" src="imagens/banner_bpe_Off.png" alt="BP-e"></td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="conteudo">
+                    <div id="localizacao">
+                        <div id="voceEstaAqui">Você está aqui:</div>
+                        <div id="caminho">
+                            <a id="ctl00_hlkPaginaPrincipao" href="principal.html">Página Principal</a>
+                            &gt;
+                            <a href="https://www.nfe.fazenda.gov.br/portal/listaSubMenu.aspx?Id=esCrSQFUvGg=">Serviços</a>
+                            &gt;
+                            <span class="fonteCinza">Consultar NF-e</span>
+                        </div>
+                    </div>
+                    <div id="zoomAcessibilidade">
+                        <img src="imagens/acessibilidade_reduzir_Off.png" id="imgZoomMenos" alt="Reduzir fonte">
+                        <img src="imagens/acessibilidade_ampliar_Off.png" id="imgZoomMais" alt="Aumentar fonte">
+                    </div>
+                    
+                    <div id="conteudoDinamico">
+                        <div class="divTituloPrincipal">
+                            <span id="ctl00_ContentPlaceHolder1_lblTituloPrincipal" class="tituloPrincipal">Consultar NF-e</span>
+                        </div>
+                        
+                        <div class="consulta-box">
+                            <label for="chaveAcesso">Chave de Acesso da NF-e</label>
+                            <input type="text" id="chaveAcesso" name="chaveAcesso" maxlength="44" placeholder="Digite os 44 dígitos da chave de acesso">
+                            
+                            <div id="erroMsg" class="erro-msg">
+                                Por favor, preencha a chave de acesso e marque a verificação "Sou humano".
+                            </div>
+                            
+                            <div class="captcha-box">
+                                <input type="checkbox" id="captchaCheck" name="captchaCheck">
+                                <label for="captchaCheck">Sou humano</label>
+                                <div class="captcha-logo">
+                                    <img src="https://www.hcaptcha.com/favicon.ico" alt="hCaptcha" style="height: 30px;">
+                                    <span>hCaptcha</span>
+                                    <span style="font-size: 8px; color: #888;">Privacidade - Termos e Condições</span>
+                                </div>
+                            </div>
+                            
+                            <div style="margin-top: 15px;">
+                                <button type="submit" class="btn-consulta">Continuar</button>
+                                <button type="button" class="btn-consulta" onclick="limparFormulario()">Limpar</button>
+                            </div>
+                        </div>
+                        
+                        <div class="observacoes">
+                            <h3>Observações</h3>
+                            <ol>
+                                <li>Chave de Acesso: deve ser informado o número de 44 dígitos presentes no DANFE (Documento Auxiliar de Nota Fiscal Eletrônica).</li>
+                                <li>Código impresso ao lado: digite os 6 caracteres da imagem. Essa informação ajuda a evitar consultas por programas automáticos, que dificultam a utilização do aplicativo pelos demais contribuintes.</li>
+                                <li>Para que a consulta funcione corretamente, é necessário que seu navegador esteja habilitado para gravação de "cookies".</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="rodape">
+                <div id="sombraRodape"></div>
+                <div id="conteudoRodape">
+                    <div id="menuRodape">
+                        <a href="https://www.nfe.fazenda.gov.br/portal/listaSubMenu.aspx?Id=6H4uVlIEaKs=">Conheça a NF-e</a>
+                        <a href="https://www.nfe.fazenda.gov.br/portal/listaSubMenu.aspx?Id=esCrSQFUvGg=">Serviços</a>
+                        <a href="https://www.nfe.fazenda.gov.br/portal/listaSubMenu.aspx?Id=ndIjl+iEFdE=">Legislação</a>
+                        <a href="https://www.nfe.fazenda.gov.br/portal/listaSubMenu.aspx?Id=04BIflQt1aY=">Documentos</a>
+                        <a href="https://www.nfe.fazenda.gov.br/portal/listaSubMenu.aspx?Id=BMPFMBoln3w=">Downloads</a>
+                        <a href="https://www.nfe.fazenda.gov.br/arearestrita/inicial/autenticacao.aspx">Área Restrita</a>
+                        <span id="ctl00_lblPortalRodape" class="labelPortalRodape">Portal da NF-e 2025 - Nota Fiscal Eletrônica v2.9.7.0</span>
+                    </div>
+                    <div id="marcaReceita">
+                        <a href="https://www.receita.fazenda.gov.br/" target="_blank" class="imgReceita">Receita Federal</a>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <script type="text/javascript">
+        function validarConsulta() {
+            var chave = document.getElementById('chaveAcesso').value.replace(/\s/g, '');
+            var captcha = document.getElementById('captchaCheck').checked;
+            var erroMsg = document.getElementById('erroMsg');
+            
+            // Validar preenchimento
+            if (chave.length === 0 || !captcha) {
+                erroMsg.style.display = 'block';
+                erroMsg.textContent = 'Por favor, preencha a chave de acesso e marque a verificação "Sou humano".';
+                return false;
+            }
+            
+            // Validar tamanho da chave (44 dígitos)
+            if (chave.length !== 44) {
+                erroMsg.style.display = 'block';
+                erroMsg.textContent = 'A chave de acesso deve conter exatamente 44 dígitos.';
+                return false;
+            }
+            
+            // Verificar se a chave corresponde à NF-e cadastrada
+            // Chave da NF-e do MacBook: 38700104007331001032550067437781303051109883
+            if (chave === '38700104007331001032550067437781303051109883') {
+                // Redirecionar para a página da NF-e
+                window.location.href = 'consultaRecaptcha8ad3.html?tipoConsulta=resumo&tipoConteudo=7PhJ+gAVw2g=' + chave;
+                return false;
+            } else {
+                erroMsg.style.display = 'block';
+                erroMsg.textContent = 'NF-e não encontrada. Verifique a chave de acesso informada.';
+                return false;
+            }
+        }
+        
+        function limparFormulario() {
+            document.getElementById('chaveAcesso').value = '';
+            document.getElementById('captchaCheck').checked = false;
+            document.getElementById('erroMsg').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
