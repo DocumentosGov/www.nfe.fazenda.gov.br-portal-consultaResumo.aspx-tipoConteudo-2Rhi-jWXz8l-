@@ -1,0 +1,205 @@
+/* Estilos para as abas do NF-e */
+
+/* Container das abas */
+#botoes_nft {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    border-bottom: 1px solid #f7e2c2;
+    background-color: transparent;
+}
+
+#botoes_nft li {
+    display: inline-block;
+    margin: 0 1px 0 0;
+    padding: 5px 8px;
+    cursor: pointer;
+    font-size: 12px;
+    color: #6d6e71;
+    border-left: 1px solid #E5E3DA;
+    border-right: 1px solid #E5E3DA;
+    border-top: 1px solid #E5E3DA;
+    border-bottom: 1px solid #f7e2c2;
+    background-color: #f8f8f8;
+    border-radius: 3px 3px 0 0;
+    -moz-border-radius: 3px 3px 0 0;
+    -webkit-border-radius: 3px 3px 0 0;
+}
+
+#botoes_nft li:hover {
+    color: #6d6e71;
+    background-color: #eeeeee;
+}
+
+#botoes_nft li.nftselected {
+    padding: 5px 8px 0 8px;
+    margin: 0;
+    background-color: #fcfaf6;
+    border-left: 1px solid #f7e2c2;
+    border-top: 3px solid #f7e2c2;
+    border-right: 1px solid #f7e2c2;
+    border-bottom: 1px solid #fcfaf6;
+    color: #811c0d;
+    font-weight: bold;
+    border-radius: 3px 3px 0 0;
+    -moz-border-radius: 3px 3px 0 0;
+    -webkit-border-radius: 3px 3px 0 0;
+}
+
+#botoes_nft li b {
+    font-weight: inherit;
+}
+
+/* Container do conteúdo das abas */
+.aba_container {
+    padding: 15px 2px 0 2px;
+    margin: 0 0 7px 0;
+    background-color: #fcfaf6;
+    border-left: solid 1px #f7e2c2;
+    border-bottom: solid 1px #f7e2c2;
+    border-right: solid 1px #f7e2c2;
+}
+
+.nft {
+    display: none;
+}
+
+/* GeralXslt - Estilos gerais do XSLT */
+.GeralXslt {
+    font-family: Arial, Verdana, Helvetica, sans-serif;
+    font-size: 11px;
+    color: #000000;
+}
+
+.GeralXslt fieldset {
+    border: 1px solid #c7a460;
+    background-color: #f4edd5;
+    margin: 10px 0;
+    padding: 10px;
+}
+
+.GeralXslt fieldset fieldset {
+    background-color: #fcfaf6;
+    margin: 5px 0;
+}
+
+.GeralXslt legend {
+    font-family: Arial, Verdana, Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    color: #b27235;
+    padding: 0 5px;
+}
+
+.GeralXslt legend.titulo-aba {
+    font-size: 14px;
+    font-weight: bold;
+    color: #b27235;
+}
+
+.GeralXslt legend.titulo-aba-interna {
+    font-size: 12px;
+    font-weight: bold;
+    color: #b27235;
+}
+
+.GeralXslt table.box {
+    width: 100%;
+    border-collapse: collapse;
+    border: none;
+}
+
+.GeralXslt table.box td {
+    padding: 3px 5px;
+    vertical-align: top;
+    border: none;
+}
+
+.GeralXslt table.box label {
+    display: block;
+    font-family: Arial, Verdana, Helvetica, sans-serif;
+    font-size: 10px;
+    color: #6f5e39;
+    font-weight: bold;
+    margin-bottom: 2px;
+}
+
+.GeralXslt table.box span {
+    display: block;
+    font-family: Arial, Verdana, Helvetica, sans-serif;
+    font-size: 11px;
+    color: #000000;
+    background-color: #fbfbf5;
+    border: 1px solid #d6c39e;
+    padding: 3px;
+    min-height: 13px;
+}
+
+/* Tabelas de produtos */
+.GeralXslt table.prod-serv-header {
+    background-color: #f4edd5;
+    border: 1px solid #c7a460;
+}
+
+.GeralXslt table.prod-serv-header td {
+    padding: 5px;
+    font-weight: bold;
+}
+
+.GeralXslt table.toggle {
+    background-color: #fcfaf6;
+    border: 1px solid #d6c39e;
+    margin-top: -1px;
+}
+
+.GeralXslt table.toggle td {
+    padding: 5px;
+}
+
+.GeralXslt table.toggable {
+    background-color: #ececec;
+    border: 1px solid #d6c39e;
+    margin-top: -1px;
+}
+
+/* Classes para colunas */
+.col-2 td { width: 50%; }
+.col-3 td { width: 33.33%; }
+.col-4 td { width: 25%; }
+.col-5 td { width: 20%; }
+.col-6 td { width: 16.66%; }
+.col-10 td { width: 10%; }
+.col-12 td { width: 8.33%; }
+
+/* Classes fixas para produtos e serviços */
+.fixo-prod-serv-numero { width: 5%; }
+.fixo-prod-serv-descricao { width: 50%; }
+.fixo-prod-serv-qtd { width: 10%; }
+.fixo-prod-serv-uc { width: 15%; }
+.fixo-prod-serv-vb { width: 20%; }
+
+.fixo-nro-serie { width: 15%; }
+.fixo-versao-xml { width: 10%; }
+
+/* Fieldset interno */
+.fieldset-internal {
+    background-color: #fcfaf6;
+    border: 1px solid #d6c39e;
+    margin: 5px 0;
+    padding: 5px;
+}
+
+.fieldset-internal legend {
+    font-size: 12px;
+    color: #6f5e39;
+}
+
+/* Versão XSLT */
+#Versao {
+    font-size: 10px;
+    color: #999;
+    text-align: right;
+    margin-bottom: 5px;
+}
