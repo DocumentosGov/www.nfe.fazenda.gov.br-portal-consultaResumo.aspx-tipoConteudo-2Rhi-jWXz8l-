@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Notas Fiscais</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 40px;
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .header p {
+            opacity: 0.9;
+            font-size: 1.1rem;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 16px;
+            padding: 30px;
+            margin-bottom: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+        }
+        
+        .card h2 {
+            color: #1e3c72;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .estrutura {
+            background: #f8fafc;
+            padding: 20px;
+            border-radius: 10px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            line-height: 1.8;
+        }
+        
+        .estrutura .folder {
+            color: #667eea;
+        }
+        
+        .estrutura .file {
+            color: #10b981;
+        }
+        
+        .lista-notas {
+            list-style: none;
+        }
+        
+        .lista-notas li {
+            padding: 15px;
+            border-bottom: 1px solid #e5e7eb;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .lista-notas li:last-child {
+            border-bottom: none;
+        }
+        
+        .lista-notas a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .lista-notas a:hover {
+            text-decoration: underline;
+        }
+        
+        .badge {
+            background: #10b981;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+        }
+        
+        .instrucoes {
+            line-height: 1.8;
+        }
+        
+        .instrucoes ol {
+            padding-left: 20px;
+        }
+        
+        .instrucoes li {
+            margin-bottom: 10px;
+        }
+        
+        .instrucoes code {
+            background: #f1f5f9;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            color: #764ba2;
+        }
+        
+        .json-exemplo {
+            background: #1e293b;
+            color: #e2e8f0;
+            padding: 20px;
+            border-radius: 10px;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+            font-size: 0.85rem;
+            line-height: 1.6;
+        }
+        
+        .json-exemplo .key {
+            color: #93c5fd;
+        }
+        
+        .json-exemplo .string {
+            color: #86efac;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📄 Sistema de Notas Fiscais</h1>
+            <p>Geração automática de páginas NF-e a partir de PDFs</p>
+        </div>
+        
+        <div class="card">
+            <h2>📂 Estrutura de Diretórios</h2>
+            <div class="estrutura">
+                <span class="folder">/notas/</span><br>
+                ├── <span class="folder">dados/</span> ← Arquivos JSON com dados das NF-e<br>
+                ├── <span class="folder">geradas/</span> ← Páginas HTML geradas<br>
+                ├── <span class="file">template.html</span> ← Template base<br>
+                ├── <span class="file">preencher.js</span> ← Script de preenchimento<br>
+                └── <span class="file">styles.css</span> ← Estilos CSS
+            </div>
+        </div>
+        
+        <div class="card">
+            <h2>📝 Notas Fiscais Geradas</h2>
+            <ul class="lista-notas">
+                <li>
+                    <a href="geradas/exemplo.html">NF-e 66843918 - Samsung Galaxy A06</a>
+                    <span class="badge">✓ Exemplo</span>
+                </li>
+            </ul>
+        </div>
+        
+        <div class="card">
+            <h2>🛠️ Como Usar</h2>
+            <div class="instrucoes">
+                <ol>
+                    <li>Envie um <strong>PDF de Nota Fiscal</strong> para extração dos dados</li>
+                    <li>Os dados serão extraídos e salvos em <code>/notas/dados/CHAVE.json</code></li>
+                    <li>Uma nova página será criada em <code>/notas/geradas/CHAVE.html</code></li>
+                    <li>A página ficará disponível automaticamente no GitHub Pages</li>
+                </ol>
+            </div>
+        </div>
+        
+        <div class="card">
+            <h2>📊 Formato do JSON</h2>
+            <pre class="json-exemplo">{
+  <span class="key">"numero"</span>: <span class="string">"66843918"</span>,
+  <span class="key">"serie"</span>: <span class="string">"1"</span>,
+  <span class="key">"chave_acesso"</span>: <span class="string">"31250803007331001032550010668439181851126592"</span>,
+  <span class="key">"emitente_nome"</span>: <span class="string">"Empresa LTDA"</span>,
+  <span class="key">"emitente_cnpj"</span>: <span class="string">"00000000000000"</span>,
+  <span class="key">"dest_nome"</span>: <span class="string">"Nome do Cliente"</span>,
+  <span class="key">"dest_cpf"</span>: <span class="string">"00000000000"</span>,
+  <span class="key">"dest_endereco"</span>: <span class="string">"Rua Exemplo, 123"</span>,
+  <span class="key">"dest_cidade"</span>: <span class="string">"São Paulo"</span>,
+  <span class="key">"dest_uf"</span>: <span class="string">"SP"</span>,
+  <span class="key">"produto_descricao"</span>: <span class="string">"Produto Exemplo"</span>,
+  <span class="key">"produto_valor"</span>: <span class="string">"599.00"</span>,
+  <span class="key">"valor_total"</span>: <span class="string">"599.00"</span>,
+  <span class="key">"icms"</span>: <span class="string">"41.93"</span>,
+  <span class="key">"difal_destino"</span>: <span class="string">"71.88"</span>
+}</pre>
+        </div>
+    </div>
+</body>
+</html>
