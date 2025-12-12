@@ -1,0 +1,39 @@
+{
+  "numero": "66843918",
+  "serie": "1",
+  "chave_acesso": "31250803007331001032550010668439181851126592",
+  "data_emissao": "11/08/2025 15:53:30",
+  
+  "emitente_nome": "Ebazar.com.br. ltda",
+  "emitente_cnpj": "03007331001032",
+  "emitente_ie": "0038450760305",
+  "emitente_uf": "MG",
+  
+  "dest_nome": "Igor Oliveira Andrade",
+  "dest_cpf": "11411334663",
+  "dest_endereco": "Rua das Opalas, SN - Quadra 40, Lote 11",
+  "dest_bairro": "Goiânia 2",
+  "dest_cidade": "Goiânia",
+  "dest_uf": "GO",
+  "dest_cep": "74663-470",
+  
+  "produto_descricao": "Smartphone Samsung Galaxy A06 128GB 4GB RAM Tela 6,7",
+  "produto_qtd": "1",
+  "produto_unidade": "UN",
+  "produto_valor_unit": "599.00",
+  "produto_valor": "599.00",
+  
+  "base_icms": "599.00",
+  "icms": "41.93",
+  "difal_destino": "71.88",
+  "pis": "9.19",
+  "cofins": "42.34",
+  "valor_total": "599.00",
+  
+  "forma_pagamento": "PIX - Pagamento Instantâneo",
+  "valor_pagamento": "599.00",
+  
+  "info_adicional": "Operação contratada no âmbito do comércio eletrônico. IMEI: 354436577773466. Valor aproximado dos tributos (IBPT) R$188,39.",
+  
+  "protocolo": "Protocolo: 131256849402429 - Data: 11/08/2025 às 15:53:32"
+}
