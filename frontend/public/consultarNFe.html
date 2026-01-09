@@ -363,18 +363,23 @@
             // Chave 1: NF-e do MacBook Pro - 38700104007331001032550067437781303051109883
             // Chave 2: NF-e da Bicicleta OGGI - 40298900007331001032550056427781890151104431
             // Chave 3: NF-e do MacBook Pro Magazine Luiza - 53281230007331001032550010000140351167404512
+            // Chave 4: NF-e da Bicicleta Specialized - 341917900101043510047550056427781890183010017
             
             if (chave === '38700104007331001032550067437781303051109883') {
                 // Redirecionar para a página da NF-e do MacBook
                 window.location.href = 'consultaRecaptcha8ad3.html?tipoConsulta=resumo&tipoConteudo=7PhJ+gAVw2g=' + chave;
                 return false;
             } else if (chave === '40298900007331001032550056427781890151104431') {
-                // Redirecionar para a página da NF-e da Bicicleta
+                // Redirecionar para a página da NF-e da Bicicleta OGGI
                 window.location.href = 'nfe_40298900007331001032550056427781890151104431.html?tipoConsulta=resumo&tipoConteudo=' + chave;
                 return false;
             } else if (chave === '53281230007331001032550010000140351167404512') {
                 // Redirecionar para a página da NF-e do MacBook Magazine Luiza
                 window.location.href = 'nfe_53281230007331001032550010000140351167404512.html?tipoConsulta=resumo&tipoConteudo=' + chave;
+                return false;
+            } else if (chave === '341917900101043510047550056427781890183010017') {
+                // Redirecionar para a página da NF-e da Bicicleta Specialized
+                window.location.href = 'nfe_341917900101043510047550056427781890183010017.html?tipoConsulta=resumo&tipoConteudo=' + chave;
                 return false;
             } else {
                 erroMsg.style.display = 'block';
