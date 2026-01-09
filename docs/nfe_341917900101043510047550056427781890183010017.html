@@ -1,0 +1,592 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="pt-br" xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>
+	Portal da Nota Fiscal Eletrônica
+</title>
+
+    <!-- CSS -->
+    <link href="css/geral.css" rel="stylesheet" type="text/css"><link href="css/classes.css" rel="stylesheet" type="text/css"><link href="css/paginasInternas.css" rel="stylesheet" type="text/css"><link href="css/estilo_visualizacao.css" rel="stylesheet" type="text/css"><link href="css/xslt.css" rel="stylesheet" type="text/css">
+
+	
+    <!-- Javascript -->
+    <script src="scripts/jquery-3.2.1.min.js" type="text/javascript"></script>
+    <script src="scripts/menu.js" type="text/javascript"></script>
+    <script src="scripts/mascaras.js" type="text/javascript"></script>
+
+    <meta http-equiv="cache-control" content="no-store, no-cache, must-revalidate, Post-Check=0, Pre-Check=0"><meta http-equiv="pragma" content="no-cache"><meta http-equiv="expires" content="0">
+
+    <style type="text/css" media="all">#barra-brasil div,#barra-brasil a,#barra-brasil ul,#barra-brasil li{margin:0;padding:0;font-size:100%;font-family:inherit;vertical-align:baseline;border:none}#barra-brasil ul{list-style:none}@font-face{font-family:"Open Sans";font-style:normal;font-weight:700;font-display:swap;src:local("Open Sans Bold"),local("OpenSans-Bold"),url("//barra.brasil.gov.br/static/opensans-bold.woff") format("woff")}#barra-brasil{height:32px;background:#f1f1f1;font-weight:bold;font-size:12px;line-height:32px;font-family:"Open Sans",Arial,Helvetica,sans-serif;border-bottom:1px solid #dfdfdf;box-sizing:content-box}#barra-brasil a{text-decoration:none}div#wrapper-barra-brasil{position:relative;margin:0 auto;width:100%;max-width:960px;height:100%}#barra-brasil .brasil-flag{float:left;padding:7px 0 6px;width:115px;border-right:2px solid #dfdfdf}#barra-brasil .brasil-flag .link-barra{display:block;padding-left:42px;width:43px;background:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2226%22%20height%3D%2219%22%20viewBox%3D%220%200%201000%20700%22%3E%3Cpath%20fill%3D%22%2300923F%22%20d%3D%22M0%200h1000v700H0z%22%2F%3E%3Cpath%20fill%3D%22%23F8C300%22%20d%3D%22M500%2085L85%20350l415%20265%20415-265L500%2085z%22%2F%3E%3Ccircle%20fill%3D%22%2328166F%22%20cx%3D%22499%22%20cy%3D%22350%22%20r%3D%22174%22%2F%3E%3Cpath%20fill%3D%22%23FFF%22%20d%3D%22M395%20296c103%200%20199%2038%20272%20101%202-8%204-17%205-26-75-61-172-98-277-98-18%200-36%201-53%203-3%208-6%2016-9%2025%2020-3%2041-4%2063-4z%22%2F%3E%3C%2Fsvg%3E") 8px center no-repeat;text-transform:uppercase;line-height:19px}#barra-brasil .list{position:absolute;top:0;right:40px;width:auto}#barra-brasil .list .first{border-left:2px solid #dfdfdf}#barra-brasil .list-item{display:inline-block;height:32px;line-height:32px;border-right:2px solid #dfdfdf}#barra-brasil .list-item a{padding:8px 15px 8px 13px}#barra-brasil .link-barra{color:#606060}</style>
+</head>
+<body onselectstart="return true;">
+    <div id="barra-brasil"><div id="wrapper-barra-brasil"> <div class="brasil-flag"><a href="https://gov.br/" class="link-barra">Brasil</a></div> <nav> <ul id="lista-barra-brasil" class="list"> <li class="list-item"><a href="http://www.gov.br/economia/pt-br/canais_atendimento/ouvidoria/simplifique" class="link-barra">Simplifique!</a></li> <li class="list-item"><a href="https://www.gov.br/secom/pt-br/acesso-a-informacao/comunicabr/" class="link-barra">Comunica BR</a></li> <li class="list-item"><a href="https://www.gov.br/pt-br/participacao-social/" class="link-barra">Participe</a></li> <li class="list-item"><a href="http://www.gov.br/acessoainformacao/" class="link-barra">Acesso à informação</a></li> <li class="list-item"><a href="http://www.planalto.gov.br/legislacao" class="link-barra">Legislação</a></li> <li class="list-item last last-item"><a href="https://gov.br/pt-br/canais-do-executivo-federal" class="link-barra">Canais</a></li> </ul> </nav> </div></div>
+
+    <div id="divCentral">
+        <form method="post" action="#" id="aspnetForm">
+
+            <div id="tudoSemRodape" class="contemFloat">
+                <div id="cabecalho">
+                    <div id="menuAcessibilidade">
+                        <a href="https://www.nfe.fazenda.gov.br/portal/listaSubMenu.aspx?Id=6H4uVlIEaKs=">Conheça a NF-e</a><a href="https://www.nfe.fazenda.gov.br/portal/listaSubMenu.aspx?Id=esCrSQFUvGg=">Serviços</a><a href="https://www.nfe.fazenda.gov.br/portal/listaSubMenu.aspx?Id=ndIjl+iEFdE=">Legislação</a><a href="https://www.nfe.fazenda.gov.br/portal/listaSubMenu.aspx?Id=04BIflQt1aY=">Documentos</a><a href="https://www.nfe.fazenda.gov.br/portal/listaSubMenu.aspx?Id=BMPFMBoln3w=">Downloads</a><a href="https://www.nfe.fazenda.gov.br/arearestrita/inicial/autenticacao.aspx">Área Restrita</a>
+                    </div>
+                    
+                    <div id="divTransparente" onclick="javascript:location.href = 'principal.aspx'">
+                    </div>
+                    <div id="imgHome">
+                        <a href="https://www.nfe.fazenda.gov.br/portal/principal.aspx">
+                            <img id="ibtHome" src="imagens/home_icon_Off.png" alt="Link para a página inicial do Portal da NF-e">
+                        </a>
+                    </div>
+                    <div id="menu">
+                        <ul class="abasMenu"><li class="itemMenuPrincipal"><a href="https://www.nfe.fazenda.gov.br/portal/listaSubMenu.aspx?Id=esCrSQFUvGg=">Serviços</a></li><li class="itemMenuPrincipal"><a href="https://www.nfe.fazenda.gov.br/portal/listaSubMenu.aspx?Id=ndIjl+iEFdE=">Legislação</a></li><li class="itemMenuPrincipal"><a href="https://www.nfe.fazenda.gov.br/portal/listaSubMenu.aspx?Id=04BIflQt1aY=">Documentos</a></li><li class="itemMenuPrincipal"><a href="https://www.nfe.fazenda.gov.br/portal/listaSubMenu.aspx?Id=BMPFMBoln3w=">Downloads</a></li></ul>
+                    </div>
+                </div>
+                <div id="barraDireita">
+                    <div id="estatisticas">
+                        <h1>Estatísticas da NF-e</h1>
+                        <span id="ctl00_lblTituloNfeAut">NF-e Autorizadas</span>
+                        <br>
+                        <div class="valorEstatistica">
+                            <span id="ctl00_lblTotalNfeAut">53,977 bilhões</span>
+                        </div>
+                        <span id="ctl00_lblTituloEmissores">Número de Emissores</span>
+                        <br>
+                        <div class="valorEstatistica">
+                            <span id="ctl00_lblTotalEmissores">2,688 milhões</span>
+                        </div>
+                        <a id="ctl00_hlkInfoEstatisticas" href="https://www.nfe.fazenda.gov.br/portal/infoEstatisticas.aspx">... saiba mais</a>
+                    </div>
+                    <div id="busca">
+                        <div id="ctl00_upnBuscar">
+                                <input name="ctl00$txtPalavraChave" type="text" id="ctl00_txtPalavraChave" class="campoTextoBusca" autocomplete="off">
+                                <input type="image" name="ctl00$ibtBuscar" id="ctl00_ibtBuscar" class="botaoBuscar" src="imagens/botao_buscar_Off_completo.png">
+                        </div>
+                    </div>
+                    <div id="linkAreaRestrita">
+                        <p>
+                            <a id="ctl00_hlkAreaRestrita" href="https://www.nfe.fazenda.gov.br/arearestrita/inicial/autenticacao.aspx">Área Restrita do Fisco</a>
+                        </p>
+                    </div>
+                    <div id="linkCentralNFe">
+                        <p>
+                            <a id="ctl00_hlkCentralAtendimento" href="https://www.serpro.gov.br/menu/suporte/central-de-atendimento-serpro-nfe-cte">Central de Atendimento</a>
+                        </p>
+                    </div>
+                    <div id="linkFAQ">
+                        <p>
+                            <a id="ctl00_hlkFAQ" href="https://www.nfe.fazenda.gov.br/portal/perguntasFrequentes.aspx?tipoConteudo=3Ow1nfTBzIo=">Perguntas Frequentes</a>
+                        </p>
+                    </div>
+                    <div id="linkSefaz">
+                        <p>
+                            <span id="ctl00_lblPortaisSefaz">Portais e Secretarias</span>
+                        </p>
+                    </div>
+                    <div id="linkBanners">
+                        <p>
+                            <span id="ctl00_lblPortaisEstaduais">Portais Estaduais da NF-e</span>
+                            <br>
+                            <select onchange="javascript: window.open(this.value)"><option value="">Selecione</option><option value="http://sefaznet.ac.gov.br/nfe/">Acre</option><option value="http://www.sefaz.al.gov.br/nfe/">Alagoas</option><option value="http://www.sefaz.ba.gov.br/scripts/default/nfiscal.asp">Bahia</option><option value="http://nfe.sef.sc.gov.br/">Santa Catarina</option><option value="http://www.fazenda.sp.gov.br/nfe/">São Paulo</option></select>
+                        </p>
+                        <p>
+                            <span id="ctl00_lblLinkSefaz">Secretarias de Fazenda</span>
+                            <br>
+                            <select onchange="javascript: window.open(this.value)"><option value="">Selecione</option><option value="http://www.sefaz.ba.gov.br/">Bahia</option><option value="http://www.sef.sc.gov.br/">Santa Catarina</option><option value="http://www.fazenda.sp.gov.br/">São Paulo</option></select>
+                        </p>
+                        
+                        <img id="linhaDivisoria" src="imagens/linha_divisoria.png" alt="Linha divisória">
+                        <div>
+                            <table cellspacing="0" rules="all" id="ctl00_gdvLinksDestaque" style="border-width:0px;border-collapse:collapse;">
+                                <tbody><tr>
+                                    <td>
+                                        <input type="image" title="Conhecimento de Transporte Eletrônico" src="imagens/banners_Visite_CTe_Off.png" alt="CT-e">
+                                    </td>
+                                </tr><tr>
+                                    <td>
+                                        <input type="image" title="Sistema Público de Escrituração Fiscal" src="imagens/banners_Visite_Sped_Off.png" alt="SPED">
+                                    </td>
+                                </tr><tr>
+                                    <td>
+                                        <input type="image" title="Manifesto Eletrônico de Documentos Fiscais" src="imagens/banner_mdfe_Off.png" alt="MDF-e">
+                                    </td>
+                                </tr>
+                            </tbody></table>
+                        </div>
+                    </div>
+                </div>
+                <div id="conteudo">
+                    <div id="localizacao">
+                        <div id="voceEstaAqui">
+                            Você está aqui:
+                        </div>
+                        <div id="caminho">
+                            <a id="ctl00_hlkPaginaPrincipao" href="https://www.nfe.fazenda.gov.br/portal/principal.aspx">Página Principal</a>
+                            &gt;
+                            <a href="https://www.nfe.fazenda.gov.br/portal/listaSubMenu.aspx?Id=esCrSQFUvGg=">Serviços</a>
+                            &gt;
+                            <span class="fonteCinza">Consultar NF-e</span>
+                        </div>
+                    </div>
+                    <div id="zoomAcessibilidade">
+                        <img src="imagens/acessibilidade_reduzir_Off.png" id="imgZoomMenos" alt="Reduzir fonte">
+                        <img src="imagens/acessibilidade_ampliar_Off.png" id="imgZoomMais" alt="Aumentar fonte">
+                    </div>
+                    <div id="conteudoDinamico">
+                        
+    <div class="divTituloPrincipal">
+        <span id="ctl00_ContentPlaceHolder1_lblTituloPrincipal" class="tituloPrincipal">Consultar NF-e</span>
+    </div>
+    <div class="indentacaoConteudo">
+        <input type="submit" name="ctl00$ContentPlaceHolder1$btnVoltar" value="Nova Consulta" id="ctl00_ContentPlaceHolder1_btnVoltar" class="botao" style="background-image: url('imagens/meio_botao_off.png');">
+        
+        <input type="submit" name="ctl00$ContentPlaceHolder1$btnDownload" value="Download do documento*" id="ctl00_ContentPlaceHolder1_btnDownload" class="botao" style="background-image: url('imagens/meio_botao_off.png');">
+        &nbsp;<input name="ctl00$ContentPlaceHolder1$txtRequerCertificado" type="text" value="*Requer certificado digital." id="ctl00_ContentPlaceHolder1_txtRequerCertificado" class="fonte10novo">
+    </div>
+
+    <div class="indentacaoConteudo">
+      
+        <link rel="stylesheet" type="text/css" href="css/estilo_visualizacao.css">
+        <div class="GeralXslt"><fieldset><legend>Dados Gerais</legend><table class="box"><tbody><tr><td><label>Chave de Acesso</label><span>3419 1790 0101 0435 1004 7550 0564 2778 1890 1830 10017</span></td><td class="fixo-nro-serie"><label>Número</label><span>060212998</span></td><td class="fixo-versao-xml"><label>Versão XML</label><span>4.00</span></td></tr></tbody></table></fieldset></div><br>
+        
+        <ul id="botoes_nft">
+            <li class="nftselected" id="tab_0" onclick="mostraAba(0)"><b>NFe</b></li>
+            <li id="tab_1" onclick="mostraAba(1)"><b>Emitente</b></li>
+            <li id="tab_2" onclick="mostraAba(2)"><b>Destinatário</b></li>
+            <li id="tab_3" onclick="mostraAba(3)"><b>Produtos&nbsp;e&nbsp;Serviços</b></li>
+            <li id="tab_4" onclick="mostraAba(4)"><b>Totais</b></li>
+            <li id="tab_5" onclick="mostraAba(5)"><b>Transporte</b></li>
+            <li id="tab_6" onclick="mostraAba(6)"><b>Cobrança</b></li>
+            <li id="tab_7" onclick="mostraAba(7)"><b>Informações&nbsp;Adicionais</b></li>
+        </ul>
+        
+        <div class="aba_container">
+            <!-- ABA NFe -->
+            <div id="aba_nft_0" class="nft" style="display: block;">
+                <div id="NFe" class="GeralXslt">
+                    <fieldset><legend class="titulo-aba">Dados da NF-e</legend>
+                        <table class="box"><tbody>
+                            <tr>
+                                <td><label>Modelo</label><span>55</span></td>
+                                <td><label>Série</label><span>1</span></td>
+                                <td><label>Número</label><span>060212998</span></td>
+                                <td><label>Data de Emissão</label><span>01/12/2025 11:12:23-03:00</span></td>
+                                <td><label>Data/Hora de Saída ou da Entrada</label><span>01/12/2025 11:12:23-03:00</span></td>
+                                <td><label>Valor&nbsp;Total&nbsp;da&nbsp;Nota&nbsp;Fiscal&nbsp;&nbsp;</label><span>39.500,00</span></td>
+                            </tr>
+                        </tbody></table>
+                    </fieldset>
+                    <fieldset><legend>Emitente</legend>
+                        <table class="box"><tbody>
+                            <tr>
+                                <td class="col-5"><label>CNPJ</label><span>33.041.260/1506-46</span></td>
+                                <td class="col-2"><label>Nome / Razão Social</label><span>casasbahia.com.br Itda (Grupo Casas Bahia S.A.)</span></td>
+                                <td class="col-5"><label>Inscrição Estadual</label><span>133091389220</span></td>
+                                <td class="col-10"><label>UF</label><span>SC</span></td>
+                            </tr>
+                        </tbody></table>
+                    </fieldset>
+                    <fieldset><legend>Destinatário</legend>
+                        <table class="box"><tbody>
+                            <tr>
+                                <td class="col-5"><label>CPF</label><span>032.317.975-43</span></td>
+                                <td class="col-2"><label>Nome / Razão Social</label><span>Javam Dantas Maciel dos Reis Júnior</span></td>
+                                <td class="col-5"><label>Inscrição Estadual</label><span></span></td>
+                                <td class="col-10"><label>UF</label><span>SC</span></td>
+                            </tr>
+                            <tr>
+                                <td class="col-5"><label>Destino da operação</label><span>1 - Operação Interna</span></td>
+                                <td class="col-2"><label>Consumidor final</label><span>1 - Consumidor final</span></td>
+                                <td colspan="2" class="col-3"><label>Presença do Comprador</label><span>2 - Operação pela internet</span></td>
+                            </tr>
+                        </tbody></table>
+                    </fieldset>
+                    <fieldset><legend>Emissão</legend>
+                        <table class="box"><tbody>
+                            <tr>
+                                <td><label>Processo</label><span>0 - com aplicativo do Contribuinte</span></td>
+                                <td><label>Versão do Processo</label><span>casasbahia.invoice</span></td>
+                                <td><label>Tipo de Emissão</label><span>1 - Normal</span></td>
+                                <td><label>Finalidade</label><span>1 - Normal</span></td>
+                            </tr>
+                            <tr>
+                                <td><label>Natureza da Operação</label><span>Venda de mercadorias</span></td>
+                                <td><label>Indicador de Intermediador/Marketplace</label><span>1 - Operação em site ou plataforma de terceiros</span></td>
+                                <td><label>Tipo da Operação</label><span>1 - Saída</span></td>
+                                <td><label><i>Digest</i> Value da NF-e</label><span>+rH/ALNfUnLuecYtc9CGGTnkiXA=</span></td>
+                            </tr>
+                        </tbody></table>
+                    </fieldset>
+                    <fieldset><legend>Situação Atual: AUTORIZADA (Ambiente de autorização: produção)</legend>
+                        <table class="box"><tbody>
+                            <tr>
+                                <td><label>Eventos da NF-e</label></td>
+                                <td><label>Protocolo</label></td>
+                                <td><label>Data Autorização</label></td>
+                                <td><label>Data Inclusão AN</label></td>
+                            </tr>
+                            <tr>
+                                <td><span>Autorização de Uso</span></td>
+                                <td><span>120517461101</span></td>
+                                <td><span>01/12/2025 às 11:12:23-03:00</span></td>
+                                <td width="25%"><span>01/12/2025 às 11:12:23</span></td>
+                            </tr>
+                        </tbody></table>
+                    </fieldset>
+                </div>
+            </div>
+            
+            <!-- ABA Emitente -->
+            <div id="aba_nft_1" class="nft" style="display: none;">
+                <div id="Emitente" class="GeralXslt">
+                    <fieldset><legend class="titulo-aba">Dados do Emitente</legend>
+                        <table class="box"><tbody>
+                            <tr class="col-2">
+                                <td><label>Nome / Razão Social</label><span>casasbahia.com.br Itda (Grupo Casas Bahia S.A.)</span></td>
+                                <td><label>Nome Fantasia</label><span>Casas Bahia</span></td>
+                            </tr>
+                            <tr>
+                                <td><label>CNPJ</label><span>33.041.260/1506-46</span></td>
+                                <td><label>Endereço</label><span>Rodovia Virgilio Varzea, 587</span></td>
+                            </tr>
+                            <tr>
+                                <td><label>Bairro / Distrito</label><span>Saco Grande</span></td>
+                                <td><label>CEP</label><span>88032-001</span></td>
+                            </tr>
+                            <tr>
+                                <td><label>Município</label><span>4205407 - Florianópolis</span></td>
+                                <td><label>Telefone</label><span>0800-770-0000</span></td>
+                            </tr>
+                            <tr>
+                                <td><label>UF</label><span>SC</span></td>
+                                <td><label>País</label><span>1058 - Brasil</span></td>
+                            </tr>
+                            <tr>
+                                <td><label>Inscrição Estadual</label><span>133091389220</span></td>
+                                <td><label>Inscrição Estadual do Substituto Tributário</label><span></span></td>
+                            </tr>
+                            <tr>
+                                <td><label>Inscrição Municipal</label><span></span></td>
+                                <td><label>Município da Ocorrência do Fato Gerador do ICMS</label><span>4205407</span></td>
+                            </tr>
+                            <tr>
+                                <td><label>CNAE Fiscal</label><span></span></td>
+                                <td><label>Código de Regime Tributário</label><span>3 - Regime Normal</span></td>
+                            </tr>
+                        </tbody></table>
+                    </fieldset>
+                </div>
+            </div>
+            
+            <!-- ABA Destinatário -->
+            <div id="aba_nft_2" class="nft" style="display: none;">
+                <div id="DestRem" class="GeralXslt">
+                    <fieldset><legend class="titulo-aba">Dados do Destinatário</legend>
+                        <table class="box"><tbody>
+                            <tr class="col-2">
+                                <td colspan="3"><label>Nome / Razão Social</label><span>Javam Dantas Maciel dos Reis Júnior</span></td>
+                            </tr>
+                            <tr class="col-2">
+                                <td colspan="2"><label>CPF</label><span>032.317.975-43</span></td>
+                                <td><label>Endereço</label><span>Rua Abelardo luz 142</span></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2"><label>Bairro / Distrito</label><span>Líder</span></td>
+                                <td><label>CEP</label><span>89805-280</span></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2"><label>Município</label><span>4204202 - Chapecó</span></td>
+                                <td><label>Telefone</label><span></span></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2"><label>UF</label><span>SC</span></td>
+                                <td><label>País</label><span>1058 - Brasil</span></td>
+                            </tr>
+                            <tr>
+                                <td style="width:25%"><label>Indicador IE</label><span>09 - Não Contribuinte</span></td>
+                                <td style="width:25%"><label>Inscrição Estadual</label><span></span></td>
+                                <td style="width:50%"><label>Inscrição SUFRAMA</label><span></span></td>
+                            </tr>
+                            <tr>
+                                <td><label>IM</label><span></span></td>
+                                <td colspan="2"><label>E-mail</label><span></span></td>
+                            </tr>
+                        </tbody></table>
+                    </fieldset>
+                </div>
+            </div>
+            
+            <!-- ABA Produtos -->
+            <div id="aba_nft_3" class="nft" style="display: none;">
+                <div id="Prod" class="GeralXslt">
+                    <fieldset><legend class="titulo-aba">Dados dos Produtos e Serviços</legend>
+                        <div>
+                            <table class="prod-serv-header box"><tbody>
+                                <tr>
+                                    <td class="fixo-prod-serv-numero"><label>Num.</label></td>
+                                    <td class="fixo-prod-serv-descricao"><label>Descrição</label></td>
+                                    <td class="fixo-prod-serv-qtd"><label>Qtd.</label></td>
+                                    <td class="fixo-prod-serv-uc"><label>Unidade Comercial</label></td>
+                                    <td class="fixo-prod-serv-vb"><label>Valor(R$)</label></td>
+                                </tr>
+                            </tbody></table>
+                            <table class="toggle box opened"><tbody>
+                                <tr>
+                                    <td class="fixo-prod-serv-numero"><span>1</span></td>
+                                    <td class="fixo-prod-serv-descricao"><span>BIKE SPECIALIZED EPIC EXPERT BRAÇA SN:WSBC604213221M</span></td>
+                                    <td class="fixo-prod-serv-qtd"><span>1,0000</span></td>
+                                    <td class="fixo-prod-serv-uc"><span>UN</span></td>
+                                    <td class="fixo-prod-serv-vb"><span>39.500,00</span></td>
+                                </tr>
+                            </tbody></table>
+                            <table class="toggable box" style="background-color: rgb(236, 236, 236); display: table;"><tbody>
+                                <tr><td>
+                                    <table class="box"><tbody>
+                                        <tr class="col-4">
+                                            <td colspan="4"><label>Código do Produto</label><span>1283990</span></td>
+                                            <td colspan="2"><label>Código NCM</label><span>87120010</span></td>
+                                            <td colspan="2"><label>Código CEST</label><span></span></td>
+                                            <td colspan="4"></td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="4"><label>Indicador de Escala Relevante</label><span></span></td>
+                                            <td colspan="4"><label>CNPJ do Fabricante da Mercadoria</label><span></span></td>
+                                            <td><label>Código de Benefício Fiscal na UF</label><span></span></td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="4"><label>Código EX da TIPI</label><span></span></td>
+                                            <td colspan="4"><label>CFOP</label><span>5102</span></td>
+                                            <td colspan="4"><label>Outras Despesas Acessórias</label><span></span></td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="4"><label>Valor do Desconto</label><span></span></td>
+                                            <td colspan="4"><label>Valor Total do Frete</label><span></span></td>
+                                            <td colspan="4"><label>Valor do Seguro</label><span></span></td>
+                                        </tr>
+                                    </tbody></table>
+                                    <br>
+                                    <table class="box"><tbody>
+                                        <tr class="col-12">
+                                            <td colspan="12"><label>Indicador de Composição do Valor Total da NF-e</label><span>1 - O valor do item (vProd) compõe o valor total da NF-e (vProd)</span></td>
+                                        </tr>
+                                        <tr class="col-4">
+                                            <td colspan="4"><label>Código EAN Comercial</label><span></span></td>
+                                            <td colspan="4"><label>Unidade Comercial</label><span>UN</span></td>
+                                            <td colspan="4"><label>Quantidade Comercial</label><span>1,0000</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="4"><label>Código EAN Tributável</label><span></span></td>
+                                            <td colspan="4"><label>Unidade Tributável</label><span>UN</span></td>
+                                            <td colspan="4"><label>Quantidade Tributável</label><span>1,0000</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="4"><label>Valor unitário de comercialização</label><span>39.500,00</span></td>
+                                            <td colspan="4"><label>Valor unitário de tributação</label><span>39.500,00</span></td>
+                                            <td colspan="4"></td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="4"><label>Número do pedido de compra</label><span></span></td>
+                                            <td colspan="4"><label>Item do pedido de compra</label><span></span></td>
+                                            <td><label>Valor Aproximado dos Tributos</label><span>6.715,00</span></td>
+                                        </tr>
+                                    </tbody></table>
+                                </td></tr>
+                            </tbody></table>
+                        </div>
+                    </fieldset>
+                </div>
+            </div>
+            
+            <!-- ABA Totais -->
+            <div id="aba_nft_4" class="nft" style="display: none;">
+                <div id="Totais" class="GeralXslt">
+                    <fieldset><legend class="titulo-aba">Totais</legend>
+                        <fieldset><legend>ICMS</legend>
+                            <table class="box"><tbody>
+                                <tr class="col-4">
+                                    <td><label>Base de Cálculo ICMS</label><span>39.500,00</span></td>
+                                    <td><label>Valor do ICMS</label><span>6.715,00</span></td>
+                                    <td><label>Valor do ICMS Desonerado</label><span>0,00</span></td>
+                                    <td><label>Valor Total do FCP</label><span>0,00</span></td>
+                                </tr>
+                                <tr>
+                                    <td><label>Valor Total ICMS FCP</label><span>0,00</span></td>
+                                    <td><label>Valor Total ICMS Interestadual UF Destino</label><span>0,00</span></td>
+                                    <td><label>Valor Total ICMS Interestadual UF Rem.</label><span>0,00</span></td>
+                                    <td><label>Base de Cálculo ICMS ST</label><span>0,00</span></td>
+                                </tr>
+                                <tr>
+                                    <td><label>Valor ICMS Substituição</label><span>0,00</span></td>
+                                    <td><label>Valor Total do FCP retido por ST</label><span>0,00</span></td>
+                                    <td colspan="2"><label>Valor Total do FCP retido anteriormente por ST</label><span>0,00</span></td>
+                                </tr>
+                                <tr>
+                                    <td><label>Valor Total dos Produtos</label><span>39.500,00</span></td>
+                                    <td><label>Valor do Frete</label><span>0,00</span></td>
+                                    <td><label>Valor do Seguro</label><span>0,00</span></td>
+                                    <td><label>Valor Total dos Descontos</label><span>0,00</span></td>
+                                </tr>
+                                <tr>
+                                    <td><label>Valor Total do II</label><span>0,00</span></td>
+                                    <td><label>Valor Total do IPI</label><span>0,00</span></td>
+                                    <td><label>Valor Total do IPI Devolvido</label><span>0,00</span></td>
+                                    <td><label>Valor do PIS</label><span>0,00</span></td>
+                                </tr>
+                                <tr>
+                                    <td><label>Valor da COFINS</label><span>0,00</span></td>
+                                    <td><label>Outras Despesas Acessórias</label><span>0,00</span></td>
+                                    <td><label>Valor Total da NFe</label><span>39.500,00</span></td>
+                                    <td><label>Valor Aproximado dos Tributos</label><span>6.715,00</span></td>
+                                </tr>
+                            </tbody></table>
+                        </fieldset>
+                    </fieldset>
+                </div>
+            </div>
+            
+            <!-- ABA Transporte -->
+            <div id="aba_nft_5" class="nft" style="display: none;">
+                <div id="Transporte" class="GeralXslt">
+                    <fieldset><legend class="titulo-aba">Dados do Transporte</legend>
+                        <table class="box"><tbody>
+                            <tr>
+                                <td><label>Modalidade do Frete</label><span>2 - Contratação do Frete por conta de Terceiros</span></td>
+                            </tr>
+                        </tbody></table>
+                    </fieldset>
+                    <fieldset><legend class="titulo-aba-interna">Volumes</legend>
+                        <table class="box"><tbody>
+                            <tr class="col-1">
+                                <td colspan="3" style="border-bottom:solid 1px #CCC"><label>Volume 1</label></td>
+                            </tr>
+                            <tr class="col-3">
+                                <td><label>Quantidade</label><span>1</span></td>
+                                <td><label>Espécie</label><span>CAIXA</span></td>
+                                <td><label>Marca dos Volumes</label><span></span></td>
+                            </tr>
+                            <tr>
+                                <td><label>Numeração</label><span></span></td>
+                                <td><label>Peso Líquido</label><span>7,700</span></td>
+                                <td><label>Peso Bruto</label><span>7,700</span></td>
+                            </tr>
+                        </tbody></table>
+                    </fieldset>
+                </div>
+            </div>
+            
+            <!-- ABA Cobrança -->
+            <div id="aba_nft_6" class="nft" style="display: none;">
+                <div id="Cobranca" class="GeralXslt">
+                    <fieldset><legend class="titulo-aba">Formas de Pagamento</legend>
+                        <div>
+                            <table class="prod-serv-header box"><tbody>
+                                <tr>
+                                    <td style="width:30%"><label>Ind. Forma de Pagamento</label></td>
+                                    <td style="width:30%"><label>Meio de Pagamento</label></td>
+                                    <td style="width:40%"><label>Descrição do Meio de Pagamento</label></td>
+                                </tr>
+                            </tbody></table>
+                        </div>
+                        <table class="toggle box opened"><tbody>
+                            <tr>
+                                <td style="width:30%"><span>0 - Pagamento à Vista</span></td>
+                                <td style="width:30%"><span>17 - Pagamento Instantâneo (PIX)</span></td>
+                                <td style="width:40%"><span></span></td>
+                            </tr>
+                        </tbody></table>
+                        <table class="toggable box" style="background-color: rgb(236, 236, 236); display: table;"><tbody>
+                            <tr><td>
+                                <table class="box"><tbody>
+                                    <tr>
+                                        <td style="width:20%"><label>Valor do Pagamento</label></td>
+                                        <td style="width:20%"><label>Data do Pagamento</label></td>
+                                        <td style="width:20%"><label>CNPJ transacional do pagamento</label></td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width:20%"><span>39.500,00</span></td>
+                                        <td style="width:20%"><span></span></td>
+                                        <td style="width:20%"><span></span></td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width:30%"><label>UF onde o pagamento foi processado</label></td>
+                                        <td style="width:30%"><label>Valor do Pagamento</label></td>
+                                        <td style="width:40%"><label>Data do Pagamento</label></td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width:30%"><span>SC</span></td>
+                                        <td style="width:30%"><span>39.500,00</span></td>
+                                        <td style="width:40%"><span></span></td>
+                                    </tr>
+                                </tbody></table>
+                            </td></tr>
+                        </tbody></table>
+                    </fieldset>
+                </div>
+            </div>
+            
+            <!-- ABA Informações Adicionais -->
+            <div id="aba_nft_7" class="nft" style="display: none;">
+                <div id="Inf" class="GeralXslt">
+                    <fieldset><legend class="titulo-aba">Informações Adicionais</legend>
+                        <div id="Versao">XSLT: v4.0.6k</div>
+                        <table class="box"><tbody>
+                            <tr>
+                                <td colspan="3"><label>Formato de Impressão DANFE</label><span>1 - DANFE normal, retrato</span></td>
+                            </tr>
+                        </tbody></table>
+                        <fieldset><legend>Informações Complementares de Interesse do Contribuinte</legend>
+                            <table class="box"><tbody>
+                                <tr>
+                                    <td><label>Descrição</label><span><div style="word-wrap: break-word">Operacao contratada no ambito do comercio eletronico ou do telemarketing SN: WSBC604213221M. Valor aproximado dos tributos (IBPT) R$6.715,00. Valores totais do ICMS Interestadual: DIFAL da UF destino 17% + FCP R$0,00; DIFAL da UF Origem R$0,00.</div></span></td>
+                                </tr>
+                            </tbody></table>
+                        </fieldset>
+                    </fieldset>
+                </div>
+            </div>
+        </div>
+        
+        <div id="ctl00_ContentPlaceHolder1_divBotoesConsulta" class="divLarguraMaxima">
+            <div class="divAlinhadoEsquerda">
+                <a id="ctl00_ContentPlaceHolder1_hplExibirAutorizacao" class="botao" style="background-image: url('imagens/meio_botao_off.png');">Exibir Autorização de Uso</a>        
+            </div>
+            <div id="ctl00_ContentPlaceHolder1_pnlImprimir" class="divImprimirConsulta">
+                <a id="ctl00_ContentPlaceHolder1_hplImprimirAba" title="Preparar aba para impressão" class="botao" style="background-image: url('imagens/meio_botao_off.png');">Preparar aba para impressão</a>
+                <a id="ctl00_ContentPlaceHolder1_hplImprimir" title="Preparar documento para impressão" class="botao" style="background-image: url('imagens/meio_botao_off.png');">Preparar documento para impressão</a>
+            </div>
+        </div>
+    </div>
+
+                    </div>
+                </div>
+            </div>
+            <div id="rodape">
+                <div id="sombraRodape">
+                </div>
+                <div id="conteudoRodape">
+                    <div id="menuRodape">
+                        <a href="https://www.nfe.fazenda.gov.br/portal/listaSubMenu.aspx?Id=6H4uVlIEaKs=">Conheça a NF-e</a><a href="https://www.nfe.fazenda.gov.br/portal/listaSubMenu.aspx?Id=esCrSQFUvGg=">Serviços</a><a href="https://www.nfe.fazenda.gov.br/portal/listaSubMenu.aspx?Id=ndIjl+iEFdE=">Legislação</a><a href="https://www.nfe.fazenda.gov.br/portal/listaSubMenu.aspx?Id=04BIflQt1aY=">Documentos</a><a href="https://www.nfe.fazenda.gov.br/portal/listaSubMenu.aspx?Id=BMPFMBoln3w=">Downloads</a><a href="https://www.nfe.fazenda.gov.br/arearestrita/inicial/autenticacao.aspx">Área Restrita</a>
+                        <span id="ctl00_lblPortalRodape" class="labelPortalRodape">Portal da NF-e 2025 - Nota Fiscal Eletrônica v2.9.7.0</span>
+                    </div>
+                    <div id="marcaReceita">
+                        <a href="https://www.receita.fazenda.gov.br/" target="_blank" class="imgReceita">
+                            Receita Federal </a>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+<script type="text/javascript">
+function mostraAba(numAba) {
+    for (var i = 0; i <= 7; i++) {
+        var aba = document.getElementById('aba_nft_' + i);
+        var tab = document.getElementById('tab_' + i);
+        if (aba) aba.style.display = 'none';
+        if (tab) tab.className = '';
+    }
+    var abaAtiva = document.getElementById('aba_nft_' + numAba);
+    var tabAtiva = document.getElementById('tab_' + numAba);
+    if (abaAtiva) abaAtiva.style.display = 'block';
+    if (tabAtiva) tabAtiva.className = 'nftselected';
+}
+</script>
+
+</body></html>
